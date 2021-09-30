@@ -1,4 +1,4 @@
-const bookmarks = [
+const bookmarksData = [
     {
         id: 1,
         title: "Google",
@@ -68,7 +68,7 @@ const bookmarks = [
         title: "Triangle Calculator",
         url:"https://www.calculator.net/triangle-calculator.html",
         category: "Tools",
-        subCategory: [math],
+        subCategory: ["math"],
         img:"",
     },
     {
@@ -76,7 +76,7 @@ const bookmarks = [
         title: "Symbolab Math solver",
         url:"https://www.symbolab.com/",
         category: "Tools",
-        subCategory: [math],
+        subCategory: ["math"],
         img:"",
     },
     {
@@ -84,7 +84,7 @@ const bookmarks = [
         title: "WolframAlpha Math solver",
         url:"https://www.wolframalpha.com/",
         category: "Tools",
-        subCategory: [math],
+        subCategory: ["math"],
         img:"",
     },
     {
@@ -92,7 +92,7 @@ const bookmarks = [
         title: "DiffChecker",
         url:"https://www.diffchecker.com/",
         category: "Tools",
-        subCategory: [text],
+        subCategory: ["text"],
         img:"",
     },
     {
@@ -100,7 +100,7 @@ const bookmarks = [
         title: "CiteThisForMe citation maker",
         url:"https://www.citethisforme.com/",
         category: "Tools",
-        subCategory: [text],
+        subCategory: ["text"],
         img:"",
     },
     {
@@ -108,10 +108,10 @@ const bookmarks = [
         title: "MyBib citation maker",
         url:"https://www.mybib.com/",
         category: "Tools",
-        subCategory: [text],
+        subCategory: ["text"],
         img:"",
     },
 ]
 
 
-export default bookmarks;
+export default bookmarksData;

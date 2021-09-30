@@ -1,10 +1,13 @@
 import react from 'react';
-import './App.css';
+//import './index.css';
+import bookmarksData from "../data"
 
-const category = ["all",...new Set()]
+const category = ["all",...new Set(bookmarksData.map((item)=> item.category))];
 
 
 function Bookmarks() {
+    
+
     return null
 }
 

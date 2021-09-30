@@ -1,18 +1,17 @@
 import react from 'react';
-import { Navbar } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import './App.css';
+import './index.css';
 //Pages import
 import Bookmarks from './pages/bookmarks';
 import Error from './pages/error';
 import About from './pages/about';
 //Components import
-import Navbar from './components/navbar';
+import TopNavbarComponent from './components/topnavbarcomponent';
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      <TopNavbarComponent />
       <Switch>
         <Route exact path="/">
           <Bookmarks />
