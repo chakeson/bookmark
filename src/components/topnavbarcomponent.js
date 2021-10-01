@@ -1,23 +1,39 @@
-import react from 'react';
+import react, { useState } from 'react';
 import { Link } from 'react-router-dom'
 //import {Navbar, Nav,NavDropdown } from 'react-bootstrap';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
 import "bootstrap/dist/css/bootstrap.min.css"
 import { IoBookmarksOutline} from "react-icons/io5" // ,IoBookmarks,IoBookmarksSharp <IoBookmarks /><IoBookmarksSharp />
 //import { IoBookmarksOutline } from "react-icons/io5";
 
 
 function TopNavbarComponent() {
+    const [ searchText, setSearchText] = useState("")
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        setSearchText(e.target.value)
+    }
+
     return (
     <Navbar bg="dark" variant="dark" expand="md" fixed="top">
         <Container>
         <Nav.Link as={Link} to="/"><Navbar.Brand><IoBookmarksOutline /></Navbar.Brand></Nav.Link>
             <Navbar.Toggle />
             <Navbar.Collapse>
-                <Nav.Link as={Link} to="/">Home</Nav.Link>
-                <Nav.Link as={Link} to="/about">About</Nav.Link>
+                <Nav className="me-auto">
+                    <Nav.Link as={Link} to="/">Home</Nav.Link>
+                    <Nav.Link as={Link} to="/about">About</Nav.Link>
+                </Nav>
+                <Nav>
+                    <Form>
+                        <FormControl onChange={(e)=>handleSearch(e)} value={searchText} type="text" placeholder="Not done"/>
+                    </Form>
+                </Nav>
             </Navbar.Collapse>
         </Container>
     </Navbar>
