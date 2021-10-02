@@ -12,15 +12,15 @@ function SunRiseSet() {
 
     const getIP = async () => {
         try {
+            //API call
             const response = await fetch(urlLocation)
             const data = await response.json()
-            console.log(data)
             setfetchDataIP({lat:data.latitude,lon:data.longitude,ip:data.IPv4,country:data.country_name})
             setsuccesfulFetchIP(true);
         } catch (error) {
             if (error.message === "Failed to fetch") {
-                setsuccesfulFetchIP(false);
                 setfetchDataIP("Adblock")
+                setsuccesfulFetchIP(false);
             }
             setSuccesfulFetchSun(false);
         }
@@ -33,12 +33,16 @@ function SunRiseSet() {
     
     const getSunData = async () => {
         try {
-            const url = `${urlSunData}lat=${fetchDataIP.lat}&lon=${fetchDataIP.lon}&date=${new Date().toISOString().slice(0, 10)}&offset=+02:00`
+            // Find UTC ofset for api
+            //const offset = new Date().getTimezoneOffset()/-60; in minutes
+            const textOffSet = Date().slice(28,34)
+            const offSet = textOffSet.slice(0,3)+":"+textOffSet.slice(3,5)
+            //API call
+            const url = `${urlSunData}lat=${fetchDataIP.lat}&lon=${fetchDataIP.lon}&date=${new Date().toISOString().slice(0, 10)}&offset=${offSet}`
             const response = await fetch(url)
             const data = await response.json()
-            //console.log(data)
             setSuccesfulFetchSun(true);
-            setfetchDataSun({sunrise:data.location.time.sunrise,sunset:data.location.time.sunset})
+            setfetchDataSun({sunrise:data.location.time[0].sunrise.time, sunset:data.location.time[0].sunset.time})
         } catch (error) {
             if (error.message === "Failed to fetch") {
                 setSuccesfulFetchSun(false);
@@ -54,6 +58,27 @@ function SunRiseSet() {
             getSunData()
         }
     },[succesfulFetchIP])
+
+
+    return (
+        <Container>
+            <div>
+                <div>Sunrise: {succesfulFetchSun ? fetchDataSun.sunrise.slice(11,16) : `loading: ${fetchDataSun}` }</div>
+                <div>Sunset: {succesfulFetchSun ? fetchDataSun.sunset.slice(11,16) : `Loading: ${fetchDataSun}`} </div>
+                <div>IP addres: {succesfulFetchIP ? fetchDataIP.ip : `Loading: ${fetchDataIP}`}</div>
+                <div>Country: {succesfulFetchIP ? fetchDataIP.country : `Loading: ${fetchDataIP}`}</div>
+            </div>
+        </Container>
+    )
+}
+
+
+export default SunRiseSet;
+
+
+
+/*
+
 
     console.log("1")
     if (succesfulFetchIP === true) {
@@ -100,6 +125,6 @@ function SunRiseSet() {
         )
     }
     console.log("8")
-}
 
-export default SunRiseSet;
+
+*/
