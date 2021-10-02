@@ -1,15 +1,15 @@
-import react, { useEffect, useState } from 'react';
-
+import react from 'react';
+import { Container,row } from 'react-bootstrap';
+import SunRiseSet from "../components/sunriseset"
 
 function Dashboard() {
-    
-    useEffect(()=>{
-        //load ip
-        //load day night
-    },[])
 
     return (
-        <div>Dashboard</div>
+        <Container>
+            <div className="row">
+                <SunRiseSet />
+            </div>
+        </Container>
     ) 
 }
 

@@ -1,3 +1,19 @@
+# API dependencies
+For find the users ip:
+https://geolocation-db.com/documentation
+url thats called https://geolocation-db.com/json/
+
+For finding sunrise and sunset based on ip apis longitude and latiude:
+https://api.met.no/weatherapi/sunrise/2.0/documentation
+
+Tried using https://sunrise-sunset.org/api but their site was providing incorrect data.
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
