@@ -4,7 +4,9 @@ function TileBookmark({title,url}) {
        
 
     return (
-        <div></div>
+        <div>
+            <a href={url}><div>{title}</div></a>
+        </div>
     )
     
 }
