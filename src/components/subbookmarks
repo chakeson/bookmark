@@ -6,7 +6,7 @@ import bookmarksData from "../data"
 const subCategoryData = ["go up",...new Set(bookmarksData.map((item)=> item.subCategory))];
 
 
-function Subbookmarks() {
+function SubBookmarks() {
     const [ subBookmarks, setSubBookmarks] = useState(subCategoryData);
     
     
@@ -14,4 +14,4 @@ function Subbookmarks() {
     return null
 }
 
-export default Subbookmarks;
+export default SubBookmarks;
