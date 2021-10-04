@@ -1,6 +1,6 @@
 import react from 'react';
-import { Container,row } from 'react-bootstrap';
-import SunRiseSet from "../components/sunriseset"
+import { Container, row } from 'react-bootstrap';
+import SunRiseSet from "./components/sunriseset"
 
 function Dashboard() {
 

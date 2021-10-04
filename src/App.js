@@ -2,10 +2,10 @@ import react from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './index.css';
 //Pages import
-import Bookmarks from './pages/bookmarks';
-import Dashboard from './pages/dashboard';
-import About from './pages/about';
-import Error from './pages/error';
+import Bookmarks from './pages/bookmarks/bookmarks';
+import Dashboard from './pages/dashboard/dashboard';
+import About from './pages/about/about';
+import Error from './pages/error/error';
 //Components import
 import TopNavbarComponent from './components/topnavbarcomponent';
 

@@ -41,8 +41,10 @@ function SunRiseSet() {
             const url = `${urlSunData}lat=${fetchDataIP.lat}&lon=${fetchDataIP.lon}&date=${new Date().toISOString().slice(0, 10)}&offset=${offSet}`
             const response = await fetch(url)
             const data = await response.json()
-            setSuccesfulFetchSun(true);
+            console.log(data);
             setfetchDataSun({sunrise:data.location.time[0].sunrise.time, sunset:data.location.time[0].sunset.time})
+            setSuccesfulFetchSun(true);
+            //console.log(fetchDataSun)
         } catch (error) {
             if (error.message === "Failed to fetch") {
                 setSuccesfulFetchSun(false);
