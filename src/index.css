@@ -14,6 +14,8 @@ body {
     display: flex;
     flex-direction: column;
     left: 20px;
+    border-left: 2px solid;
+    padding-left: 15px;
 }
 
 .linkOwn {
