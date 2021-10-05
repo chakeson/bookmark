@@ -1,6 +1,5 @@
-import { Children } from "react"
 
-const bookmarksData = [
+const bookmarksDataLeft = [
     {
         id:"1",
         title:"Search",
@@ -47,7 +46,7 @@ const bookmarksData = [
                 id: "2-2",
                 title: "EttremeTech",
                 url:"https://www.extremetech.com/",
-                img:"https://www.extremetech.com/favicon.ico",
+                img:"https://www.extremetech.com/wp-content/themes/extremetech/favicon.ico",
                 children:""
             },
             {
@@ -177,7 +176,7 @@ const bookmarksData = [
                 id: "3-5",
                 title: "Terms of Service Didn't Read",
                 url:"https://tosdr.org/",
-                img:"https://tosdr.org/favicon.ico",
+                img:"https://cdn.tosdr.org/themes/crisp/favicon/apple-touch-icon.png?5e5a185deb0791ba28fde00e308f488c5845f2bcc02f3d8437f2115b20627967",
                 children:""
             },
             {
@@ -200,6 +199,241 @@ const bookmarksData = [
                 url:"https://www.nayuki.io/page/png-file-chunk-inspector",
                 img:"https://www.nayuki.io/favicon.ico",
                 children:""
+            },
+            {
+                id: "3-9",
+                title: "Maps",
+                url:"",
+                img:"folder",
+                children:[
+                    {
+                        id: "3-9-1",
+                        title: "Soviet map",
+                        url:"",
+                        img:"folder",
+                        children:[
+                            {
+                                id: "3-9-1-1",
+                                title: "Soviet Military Maps A Treasure Trove for Backpackers",
+                                url:"http://www.compasscaddy.com/soviet-military-maps-a-treasure-trove-for-wilderness-backpackers/",
+                                img:"http://www.compasscaddy.com/favicon.ico",
+                                children:""
+                            },
+                            {
+                                id: "3-9-1-2",
+                                title: "Load Map viewer",
+                                url:"http://loadmap.net/en",
+                                img:"http://loadmap.net/favicon.ico",
+                                children:""
+                            },
+                            {
+                                id: "3-9-1-3",
+                                title: "Homyaki Map Viewer",
+                                url:"http://akosarev.info/engine/?interface=geo_maps&form=main",
+                                img:"http://akosarev.info/favicon.ico",
+                                children:""
+                            },
+                            {
+                                id: "3-9-1-4",
+                                title: "Vlasenko Map Viewer",
+                                url:"https://maps.vlasenko.net/",
+                                img:"https://maps.vlasenko.net/favicon.ico",
+                                children:""
+                            }, 
+                        ]
+                    },
+                    {
+                        id: "3-9-2",
+                        title: "Strava Heatmap",
+                        url:"https://www.strava.com/heatmap#2.75/-74.62703/32.94810/hot/all",
+                        img:"https://www.strava.com/favicon.ico",
+                        children:""
+                    },
+                    {
+                        id: "3-9-3",
+                        title: "Map Maker Nat Geo",
+                        url:"https://mapmaker.nationalgeographic.org/",
+                        img:"https://mapmaker.nationalgeographic.org/favicon.ico",
+                        children:""
+                    },
+                    {
+                        id: "3-9-4",
+                        title: "Lantmäteri Karta",
+                        url:"https://minkarta.lantmateriet.se/",
+                        img:"https://minkarta.lantmateriet.se/favicon.ico",
+                        children:""
+                    },
+                    {
+                        id: "3-9-5",
+                        title: "Google Maps",
+                        url:"https://www.google.com/maps/",
+                        img:"https://www.google.com/maps/favicon.ico",
+                        children:""
+                    },
+                    {
+                        id: "3-9-6",
+                        title: "Flood Map",
+                        url:"https://www.floodmap.net/",
+                        img:"https://www.floodmap.net/favicon.ico",
+                        children:""
+                    },
+                    {
+                        id: "3-9-7",
+                        title: "Light Pollution Map",
+                        url:"https://www.lightpollutionmap.info",
+                        img:"https://www.lightpollutionmap.info/favicon.ico",
+                        children:""
+                    },
+                    {
+                        id: "3-9-8",
+                        title: "Dark Site Finder",
+                        url:"https://darksitefinder.com/maps/world.html#4/54.01/22.15",
+                        img:"https://darksitefinder.com/favicon.ico",
+                        children:""
+                    },
+                    {
+                        id: "3-9-9",
+                        title: "Find Star Link",
+                        url:"https://findstarlink.com/",
+                        img:"https://findstarlink.com/favicon.ico",
+                        children:""
+                    },
+                    {
+                        id: "3-9-10",
+                        title: "Star Link SX",
+                        url:"https://starlink.sx/",
+                        img:"https://starlink.sx/favicon.ico",
+                        children:""
+                    },
+                    {
+                        id: "3-9-11",
+                        title: "Submarine Cable Map 2021",
+                        url:"https://submarine-cable-map-2021.telegeography.com/",
+                        img:"https://submarine-cable-map-2021.telegeography.com/favicon.ico",
+                        children:""
+                    },
+                ]
+            },
+            {
+                id:"3-10",
+                title:"Piracy",
+                url:"",
+                img:"folder",
+                children: [
+                    {
+                        id: "3-10-1",
+                        title: "Reddit Piracy Guide",
+                        url:"https://www.reddit.com/r/Piracy/wii/index?utm_source=reddit&utm_medium=usertext&utm_name=Piracy&utm_content=t3_6583hl",
+                        img:"https://www.reddit.com/favicon.ico",
+                        children:""
+                    },
+                    {
+                        id: "3-10-2",
+                        title: "Awesome Piracy Guide",
+                        url:"https://github.com/Igglybuff/awesome-piracy/blob/master/readme.md",
+                        img:"https://github.com/favicon.ico",
+                        children:""
+                    },
+                    {
+                        id: "3-10-3",
+                        title: "Sites",
+                        url:"",
+                        img:"folder",
+                        children: [
+                            {
+                                id: "3-10-3-1",
+                                title: "1337X",
+                                url:"https://1337x.to/",
+                                img:"",
+                                children:""
+                            },
+                            {
+                                id: "3-10-3-2",
+                                title: "The Pirate Bay",
+                                url:"https://thepiratebay.org/index.html",
+                                img:"",
+                                children:""
+                            },
+                            {
+                                id: "3-10-3-3",
+                                title: "AudioBook Bay",
+                                url:"http://audiobookbay.nl/",
+                                img:"",
+                                children:""
+                            },
+                            {
+                                id: "3-10-3-4",
+                                title: "FitGirl Repack Games",
+                                url:"https://fitgirl-repacks.site/",
+                                img:"",
+                                children:""
+                            },
+                            {
+                                id: "3-10-3-5",
+                                title: "Z-lib",
+                                url:"https://z-lib.org/",
+                                img:"",
+                                children:""
+                            },
+                            {
+                                id: "3-10-3-6",
+                                title: "Tokyo Book",
+                                url:"https://tokybook.com/",
+                                img:"",
+                                children:""
+                            },
+                            {
+                                id: "3-10-3-7",
+                                title: "AudioBooks",
+                                url:"https://xaudiobooks.com/",
+                                img:"",
+                                children:""
+                            },
+                            {
+                                id: "3-10-3-8",
+                                title: "IR games piracy group",
+                                url:"http://dl.gold-team.ir/Online/",
+                                img:"",
+                                children:""
+                            },
+                            {
+                                id: "3-10-3-9",
+                                title: "Lime Torrents",
+                                url:"https://www.limetorrents.pro/",
+                                img:"",
+                                children:""
+                            },
+                            {
+                                id: "3-10-3-10",
+                                title: "RARBG",
+                                url:"https://rarbg.to/index80.php",
+                                img:"",
+                                children:""
+                            },
+                            {
+                                id: "3-10-3-11",
+                                title: "RUtracker",
+                                url:"https://rutracker.org/forum/index.php",
+                                img:"",
+                                children:""
+                            },
+                            {
+                                id: "3-10-3-12",
+                                title: "Toorgle torrent search",
+                                url:"https://www.toorgle.com/",
+                                img:"",
+                                children:""
+                            },
+                            {
+                                id: "3-10-3-12",
+                                title: "Zooqle",
+                                url:"https://zooqle.com/",
+                                img:"",
+                                children:""
+                            },
+                        ]
+                    },
+                ]
             },
         ]
     },
@@ -513,6 +747,13 @@ const bookmarksData = [
                         img:"https://www.udemy.com/favicon.ico",
                         children:""
                     },
+                    {
+                        id: "4-11-1",
+                        title:"GnuCOBOL compiler",
+                        url:"https://sourceforge.net/projects/gnucobol/files/?%3Cbr%20/%3Esource=navbar", 
+                        img:"https://sourceforge.net/favicon.ico",
+                        children:""
+                    },
                 ]
             },
             {
@@ -553,16 +794,30 @@ const bookmarksData = [
                 ]
             },
             {
-                id: "4-13",
+                id: "4-14",
                 title:"Sam Bowne Classes",
                 url:"https://samsclass.info/", 
                 img:"https://samsclass.info/favicon.ico",
                 children:""
             },
+            {
+                id: "4-15",
+                title:"GitHub",
+                url:"https://github.com/", 
+                img:"https://github.com/favicon.ico",
+                children:""
+            },
         ]
+    },
+    {
+        id:"5",
+        title:"Awesome's Big Link Tree",
+        url:"https://github.com/sindresorhus/awesome/blob/main/readme.md",
+        img:"https://github.com/favicon.ico",
+        children:""
     },
 ]
 
 
 
-export default bookmarksData;
+export default bookmarksDataLeft;

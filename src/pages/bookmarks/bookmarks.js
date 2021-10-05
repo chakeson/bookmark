@@ -1,5 +1,6 @@
 import react, { useState } from 'react';
-import bookmarksData from "../../data/data"
+import bookmarksDataLeft from "../../data/dataleft"
+import bookmarksDataRight from "../../data/dataright"
 import { Container } from 'react-bootstrap';
 import { AiOutlineFolderAdd , AiOutlineFolderOpen} from "react-icons/ai";
 import link from "../../data/link.png"
@@ -14,7 +15,7 @@ const Node = ({id,title,url,img,children}) => {
 
 
     return (
-        <div className="">
+        <div>
             {url==="" ? (
                 <div className="d-inline-flex flex-row" style={{alignItems:"baseline"}} onClick={()=>handleClick()}>
                     {(img!=="folder") && (children==="") && <img src={img} alt="icon" className="iconOwn" onError={(e)=>{e.target.onerror = null; e.target.src=link}}/>}
@@ -47,10 +48,18 @@ function Bookmarks() {
 
     return (
         <Container>
-            {bookmarksData.map((firstLayerNodes,index) => (
-                <Node {...firstLayerNodes} key={index}/>
-            ))}
-            
+            <div className="row">
+                <div className="col-12 col-md-6">
+                    {bookmarksDataLeft.map((firstLayerNodes,index) => (
+                        <Node {...firstLayerNodes} key={index}/>
+                    ))}
+                </div>
+                <div className="col-12 col-md-6">
+                    {bookmarksDataRight.map((firstLayerNodes,index) => (
+                        <Node {...firstLayerNodes} key={index}/>
+                    ))}
+                </div>
+            </div>
         </Container>
     )
 }
