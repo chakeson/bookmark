@@ -1,12 +1,14 @@
 import react from 'react';
-import { Container, row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import SunRiseSet from "./components/sunriseset"
+import IpLocation from './components/iplocation';
 
 function Dashboard() {
 
     return (
         <Container>
-            <div className="row">
+            <div className="row d-inline-flex">
+                <IpLocation />
                 <SunRiseSet />
             </div>
         </Container>

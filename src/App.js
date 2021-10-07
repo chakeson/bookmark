@@ -8,6 +8,10 @@ import About from './pages/about/about';
 import Error from './pages/error/error';
 //Components import
 import TopNavbarComponent from './components/topnavbarcomponent';
+//Context component
+//import DashboardProvider from './pages/dashboard/components/contextDashboard'
+//import Wrapper from './pages/dashboard/wrapper';
+//import Dashboard from './pages/dashboard/dashboard';
 
 function App() {
   return (
@@ -35,3 +39,9 @@ function App() {
 }
 
 export default App;
+
+/*
+          <DashboardProvider>
+            <Dashboard />
+          </DashboardProvider>
+ */

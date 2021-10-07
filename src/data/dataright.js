@@ -179,6 +179,21 @@ const bookmarksDataRight = [
                 children:""
             },
         ]
+    },
+    {
+        id:"3",
+        title:"DIY",
+        url:"",
+        img:"folder",
+        children: [
+            {
+                id:"3-1",
+                title:"Choosing the right wall anchors",
+                url:"https://www.finewoodworking.com/2021/07/19/choosing-the-right-wall-anchors", 
+                img:"https://www.finewoodworking.com/app/themes/finewoodworking/favicon.ico",
+                children:""
+            }
+        ]
     },        
 ]
 
