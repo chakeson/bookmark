@@ -16,6 +16,7 @@ function IpLocation() {
             const data = await response.json()
             setfetchDataIP({lat:data.latitude,lon:data.longitude,ip:data.IPv4,country:data.country_name})
             setSuccesfulFetchIP(true);
+            //console.log(data);
         } catch (error) {
             if (error.message === "Failed to fetch") {
                 setfetchDataIP("Adblock")

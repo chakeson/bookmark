@@ -711,6 +711,34 @@ const bookmarksDataLeft = [
                         img:"https://github.com/favicon.ico",
                         children:""
                     },
+                    {
+                        id: "4-7-5",
+                        title:"Binary search interview questions",
+                        url:"https://binarysearch.com/", 
+                        img:"https://binarysearch.com/favicon.ico",
+                        children:""
+                    },
+                    {
+                        id: "4-7-6",
+                        title:"Code Signal interview questions",
+                        url:"https://codesignal.com/", 
+                        img:"https://codesignal.com/favicon.ico",
+                        children:""
+                    },
+                    {
+                        id: "4-7-7",
+                        title:"Coderpad interview questions",
+                        url:"https://coderpad.io/", 
+                        img:"https://coderpad.io/favicon.ico",
+                        children:""
+                    },
+                    {
+                        id: "4-7-8",
+                        title:"75 most relevant leetCode questions",
+                        url:"https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions", 
+                        img:"https://leetcode.com/favicon.ico",
+                        children:""
+                    },
                 ]
             },
             {
@@ -773,7 +801,7 @@ const bookmarksDataLeft = [
             },
             {
                 id: "4-13",
-                title:"Hosting",
+                title:"Regex",
                 url:"", 
                 img:"folder",
                 children:[

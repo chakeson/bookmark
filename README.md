@@ -8,6 +8,8 @@ https://api.met.no/weatherapi/sunrise/2.0/documentation
 
 Tried using https://sunrise-sunset.org/api but their site was providing incorrect data.
 
+Weather API
+yr.no terms of service https://developer.yr.no/doc/TermsOfService/
 
 
 
