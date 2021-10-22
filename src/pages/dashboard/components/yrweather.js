@@ -1,23 +1,24 @@
-import react, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useGlobalContext } from '../../../context';
 import moment from 'moment'
-//import {} from "react-icons/wi";
+import ShortTermWeather from './subcomponentsweather/shorttermweather';
+import LongTermWeather from './subcomponentsweather/longtermweather';
 
 const urlWeather = "https://api.met.no/weatherapi/locationforecast/2.0/compact?"
 
 function YRWeather() {
     const {succesfulFetchIP,fetchDataIP ,succesfulFetchWeather,setSuccesfulFetchWeather,fetchDataWeather, setFetchDataWeather} = useGlobalContext();
+    //const [showLongWeather, setShowLongWeather] = useState(false); 
 
     const findBreakPoint = (data) => {
         let i = 0;
-        let breakPointWeather = 53;
+        let breakPointWeather = 52;
         let timeDifference = 0;
         try {
             while (i < data.length) {
                 let a = moment(data[i].time)
                 let b = moment(data[i+1].time)
                 timeDifference = b.diff(a,"hours")
-                console.log(timeDifference)
                 if (timeDifference===6) {
                     breakPointWeather = i;
                     i=data.length;
@@ -41,14 +42,13 @@ function YRWeather() {
             }
             //console.log(response);
             const data = await response.json();
-            console.log(data);
+            //console.log(data);
             
             // Process the data and extract when it goes from hourly to long term (6h gap)
             const breakPointWeather = findBreakPoint(data.properties.timeseries)
 
             //console.log(data.properties.timeseries)
-            setFetchDataWeather([data.properties.timeseries,"dgsdg"])
-            //console.log(fetchDataWeather)
+            setFetchDataWeather([data.properties.timeseries , breakPointWeather])
             setSuccesfulFetchWeather(true);
         } catch (error) {
             if (error.message === "Failed to fetch") {
@@ -69,8 +69,8 @@ function YRWeather() {
 
     return (
         <div className="card">
-            {/*<div>Sunrise: {succesfulFetchWeather ? fetchDataWeather : `loading: ${fetchDataWeather}` }</div>
-            <div>Sunset: {succesfulFetchWeather ? fetchDataWeather : `Loading: ${fetchDataWeather}`} </div>*/}
+            <ShortTermWeather />
+            <LongTermWeather />
         </div>
         
     )
