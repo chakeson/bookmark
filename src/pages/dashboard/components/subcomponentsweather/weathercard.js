@@ -31,7 +31,7 @@ function WeatherCard({data,time}) {
 
 
     return (
-        <div className="d-flex flex-row border-bottom" style={{borderBotttom:"1px solid rgba(0, 0, 0, 0.125)"}}>
+        <div className="d-flex flex-row border-bottom">
             <div style={{paddingRight:10}}> {/* Time in day and weekday*/}
                 {dateTimeText}
             </div>

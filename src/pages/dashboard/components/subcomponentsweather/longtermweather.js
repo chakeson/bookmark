@@ -8,15 +8,19 @@ function LongTermWeather() {
     const [showLongWeather, setShowLongWeather] = useState(false); 
 
     return (
-        <div className="">
+        <>
+        <div className="border-bottom" style={{paddingTop:5, paddingBottom:5}}>
             <button className="btn btn-primary" onClick={()=>setShowLongWeather(!showLongWeather)}>
                 {showLongWeather ? "Hide longterm":"Show longterm"}
             </button>
+        </div>
+        <div className="">
             {succesfulFetchWeather ? 
             (showLongWeather &&
                 (fetchDataWeather[0].slice(fetchDataWeather[1],-1).map((data, index)=> <WeatherCard {...data} key={"short"+index} />)))
             : "Loading"}
         </div>
+        </>
     )
 }
 
