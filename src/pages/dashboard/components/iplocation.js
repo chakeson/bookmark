@@ -36,7 +36,7 @@ function IpLocation() {
     
 
     return (
-        <div className="card">
+        <div className="card" style={{width:"90%"}}>
             <div>IP address: {succesfulFetchIP ? fetchDataIP.ip : `Loading: ${fetchDataIP}`}</div>
             <div>Country: {succesfulFetchIP ? fetchDataIP.country : `Loading: ${fetchDataIP}`}</div>
         </div>

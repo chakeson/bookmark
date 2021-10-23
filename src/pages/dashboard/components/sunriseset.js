@@ -40,7 +40,7 @@ function SunRiseSet() {
 
 
     return (
-        <div className="card">
+        <div className="card" style={{width:"90%"}}>
             <div>Sunrise: {succesfulFetchSun ? fetchDataSun.sunrise.slice(11,16) : `loading: ${fetchDataSun}` }</div>
             <div>Sunset: {succesfulFetchSun ? fetchDataSun.sunset.slice(11,16) : `Loading: ${fetchDataSun}`} </div>
         </div>

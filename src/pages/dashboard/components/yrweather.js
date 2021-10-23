@@ -68,7 +68,7 @@ function YRWeather() {
 
 
     return (
-        <div className="card">
+        <div className="card" style={{width:"90%"}}>
             <ShortTermWeather />
             <LongTermWeather />
         </div>

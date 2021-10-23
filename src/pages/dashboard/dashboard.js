@@ -8,10 +8,13 @@ function Dashboard() {
 
     return (
         <Container>
-            <div className="row d-inline-flex">
+            <div className="row d-inline-flex col-12 col-md-6">
                 <IpLocation />
                 <SunRiseSet />
                 <YRWeather />
+            </div>
+            <div className="row d-inline-flex col-12 col-md-6">
+
             </div>
         </Container>
     ) 
