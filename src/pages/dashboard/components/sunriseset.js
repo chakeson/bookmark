@@ -1,4 +1,4 @@
-import react, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useGlobalContext } from '../../../context';
 
 
@@ -36,7 +36,7 @@ function SunRiseSet() {
         if ( succesfulFetchIP === true ){
             getSunData();
         }
-    },[succesfulFetchIP])
+    },[succesfulFetchIP,getSunData])
 
 
     return (

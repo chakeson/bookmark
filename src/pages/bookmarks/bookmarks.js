@@ -1,4 +1,4 @@
-import react, { useState } from 'react';
+import React, { useState } from 'react';
 import bookmarksDataLeft from "../../data/dataleft"
 import bookmarksDataRight from "../../data/dataright"
 import { Container } from 'react-bootstrap';

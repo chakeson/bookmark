@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useGlobalContext } from '../../../context';
 import moment from 'moment'
 import ShortTermWeather from './subcomponentsweather/shorttermweather';
@@ -7,7 +7,7 @@ import LongTermWeather from './subcomponentsweather/longtermweather';
 const urlWeather = "https://api.met.no/weatherapi/locationforecast/2.0/compact?"
 
 function YRWeather() {
-    const {succesfulFetchIP,fetchDataIP ,succesfulFetchWeather,setSuccesfulFetchWeather,fetchDataWeather, setFetchDataWeather} = useGlobalContext();
+    const {succesfulFetchIP,fetchDataIP ,setSuccesfulFetchWeather, setFetchDataWeather} = useGlobalContext();
     //const [showLongWeather, setShowLongWeather] = useState(false); 
 
     const findBreakPoint = (data) => {
@@ -64,7 +64,7 @@ function YRWeather() {
         if ( succesfulFetchIP === true ){
             getWeatherData();
         }
-    },[succesfulFetchIP])
+    },[succesfulFetchIP,getWeatherData])
 
 
     return (

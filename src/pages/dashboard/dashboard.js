@@ -1,8 +1,12 @@
-import react from 'react';
+import React from 'react';
 import { Container } from 'react-bootstrap';
+//Left container coloumn
 import SunRiseSet from "./components/sunriseset";
 import IpLocation from './components/iplocation';
 import YRWeather from './components/yrweather';
+//Right container coloumn
+import CryptoPrice from './components/cryptoprice';
+
 
 function Dashboard() {
 
@@ -14,7 +18,7 @@ function Dashboard() {
                 <YRWeather />
             </div>
             <div className="row d-inline-flex col-12 col-md-6">
-
+                <CryptoPrice />
             </div>
         </Container>
     ) 

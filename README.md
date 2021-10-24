@@ -11,7 +11,8 @@ Tried using https://sunrise-sunset.org/api but their site was providing incorrec
 Weather API
 yr.no terms of service https://developer.yr.no/doc/TermsOfService/
 
-
+Crypto Price API
+https://messari.io/api/docs
 
 
 
