@@ -36,14 +36,14 @@ function CryptoPrice() {
     
 
     return (
-        <div className="card" style={{width:"90%"}}>
+        <div className="card">
             <div className="d-flex flex-row border-bottom border-dark">
-                <div>Name</div>
-                <div>Price</div>
-                <div>1H range</div>
-                <div>24H range</div>
-                <div>Marketcap</div>
-                <div>Volume Real(24h)</div>
+                <div style={{paddingLeft:40,paddingRight:10}}>Name</div>
+                <div style={{paddingRight:10}}>Price</div>
+                <div style={{paddingRight:10}}>1H range</div>
+                <div style={{paddingRight:10}}>24H range</div>
+                <div style={{paddingRight:10}}>Marketcap</div>
+                <div style={{paddingRight:10}}>Volume Real(24h)</div>
             </div>
             {succesfulFetchCryptoPrice ? fetchDataCryptoPrice.data.map((data, index) => (<CryptoCard {...data} key={data.id}/>)) : "Loading"}
         </div>
