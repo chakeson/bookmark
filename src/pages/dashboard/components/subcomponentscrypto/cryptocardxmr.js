@@ -1,8 +1,10 @@
 import React from 'react';
 
 
-function CryptoCard({id,metrics,name,slug,symbol}) {
+function CryptoCardXMR({data }) {
+    const {id, market_data, marketcap, name, symbol} = data
     
+
     const displayBilionsAndTrilions = (number) => {
         var svar;
         number = parseInt(number,10)
@@ -57,22 +59,22 @@ function CryptoCard({id,metrics,name,slug,symbol}) {
                 {name}
             </td>
             <td>{/*USD price*/}
-                {"$"+roundNumberToLength(metrics.market_data.price_usd)}
+                {"$"+roundNumberToLength(market_data.price_usd)}
             </td>
             <td>{/*1h Range*/}
-                {roundNumberToLength(metrics.market_data.ohlcv_last_1_hour.low) +"-"+ roundNumberToLength(metrics.market_data.ohlcv_last_1_hour.high)}
+                {roundNumberToLength(market_data.ohlcv_last_1_hour.low) +"-"+ roundNumberToLength(market_data.ohlcv_last_1_hour.high)}
             </td>
             <td>{/*24h Range*/}
-                {roundNumberToLength(metrics.market_data.ohlcv_last_24_hour.low) +"-"+ roundNumberToLength(metrics.market_data.ohlcv_last_24_hour.high)}
+                {roundNumberToLength(market_data.ohlcv_last_24_hour.low) +"-"+ roundNumberToLength(market_data.ohlcv_last_24_hour.high)}
             </td>
             <td>{/*Market cap*/}
-                {displayBilionsAndTrilions(metrics.marketcap.current_marketcap_usd)}
+                {displayBilionsAndTrilions(marketcap.current_marketcap_usd)}
             </td>
             <td>{/*Market dominance %*/}
-                {metrics.marketcap.marketcap_dominance_percent.toFixed(1)+"%"}
+                {marketcap.marketcap_dominance_percent.toFixed(1)+"%"}
             </td>
             <td>{/*volume*/}
-                {displayBilionsAndTrilions(metrics.market_data.real_volume_last_24_hours)}
+                {displayBilionsAndTrilions(market_data.real_volume_last_24_hours)}
             </td>
         </tr>
         
@@ -80,4 +82,4 @@ function CryptoCard({id,metrics,name,slug,symbol}) {
 }
 
 
-export default CryptoCard;
+export default CryptoCardXMR;

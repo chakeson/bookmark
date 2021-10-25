@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import { useGlobalContext } from '../../../context';
-
+import Card from 'react-bootstrap/card'
 
 const urlLocation = "https://geolocation-db.com/json/"
 
@@ -36,10 +36,10 @@ function IpLocation() {
     
 
     return (
-        <div className="card" style={{width:"90%"}}>
+        <Card style={{width:"90%"}}>
             <div>IP address: {succesfulFetchIP ? fetchDataIP.ip : `Loading: ${fetchDataIP}`}</div>
             <div>Country: {succesfulFetchIP ? fetchDataIP.country : `Loading: ${fetchDataIP}`}</div>
-        </div>
+        </Card>
         
     )
 }

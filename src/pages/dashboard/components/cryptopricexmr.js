@@ -1,36 +1,35 @@
 import React, { useCallback, useEffect } from 'react';
 import { useGlobalContext } from '../../../context';
-import CryptoCard from './subcomponentscrypto/cryptocard';
+import CryptoCardXMR from './subcomponentscrypto/cryptocardxmr';
 import Table from 'react-bootstrap/table';
 //import Card from 'react-bootstrap/card'
 
-const urlCrypto = "https://data.messari.io/api"
-const dataCall = "/v2/assets?limit=10&fields=id,name,slug,symbol,metrics/market_data/price_usd,metrics/market_data/real_volume_last_24_hours,metrics/market_data/ohlcv_last_1_hour,metrics/market_data/ohlcv_last_24_hour,metrics/marketcap/current_marketcap_usd,metrics/marketcap/marketcap_dominance_percent"
+const urlXMR = "https://data.messari.io/api/v1/assets/xmr/metrics?fields=id,name,slug,symbol,market_data/price_usd,market_data/real_volume_last_24_hours,market_data/ohlcv_last_1_hour,market_data/ohlcv_last_24_hour,marketcap/current_marketcap_usd,marketcap/marketcap_dominance_percent"
 
-function CryptoPrice() {
-    const {succesfulFetchCryptoPrice, setSuccesfulFetchCryptoPrice, fetchDataCryptoPrice, setFetchDataCryptoPrice} = useGlobalContext();
+
+function CryptoPriceXMR() {
+    const {succesfulFetchCryptoPriceXMR, setSuccesfulFetchCryptoPriceXMR,fetchDataCryptoPriceXMR, setFetchDataCryptoPriceXMR} = useGlobalContext();
     
 
     const getCryptoPrice = useCallback( async () => {
         try {
             //API call
-            const url = urlCrypto+dataCall;
-            const response = await fetch(url);
+            const response = await fetch(urlXMR);
             const data = await response.json();
-            //console.log(data)
-            setFetchDataCryptoPrice(data)
-            setSuccesfulFetchCryptoPrice(true);
+            console.log(data)
+            setFetchDataCryptoPriceXMR(data)
+            setSuccesfulFetchCryptoPriceXMR(true);
         } catch (error) {
             if (error.message === "Failed to fetch") {
-                setFetchDataCryptoPrice("Adblock")
-                setSuccesfulFetchCryptoPrice(false);
+                setFetchDataCryptoPriceXMR("Adblock")
+                setSuccesfulFetchCryptoPriceXMR(false);
             } else {
                 console.log(error)
             }
-            setSuccesfulFetchCryptoPrice(false);
+            setSuccesfulFetchCryptoPriceXMR(false);
         }
 
-    },[setSuccesfulFetchCryptoPrice,setFetchDataCryptoPrice])
+    },[setSuccesfulFetchCryptoPriceXMR,setFetchDataCryptoPriceXMR])
 
     useEffect(()=>{
         getCryptoPrice()
@@ -54,7 +53,7 @@ function CryptoPrice() {
                     </tr>
                 </thead>
                 <tbody>
-                    {succesfulFetchCryptoPrice ? fetchDataCryptoPrice.data.map((data) => (<CryptoCard {...data} key={data.id}/>)) : "Loading"}
+                    {succesfulFetchCryptoPriceXMR ? <CryptoCardXMR {...fetchDataCryptoPriceXMR} /> : "Loading"}
                 </tbody>
             </Table>
             </div>
@@ -62,10 +61,6 @@ function CryptoPrice() {
         
     )
 }
-
-
-export default CryptoPrice;
-/*
-<Card style={{width:"90%", height:733}}>
-</Card>
-*/
+// <CryptoCard {...fetchDataCryptoPriceXMR} key={fetchDataCryptoPriceXMR.data.id}/>
+//fetchDataCryptoPriceXMR.data.map((data) => (<CryptoCard {...data} key={data.id}/>))
+export default CryptoPriceXMR;
