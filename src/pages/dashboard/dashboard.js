@@ -6,7 +6,7 @@ import IpLocation from './components/iplocation';
 import YRWeather from './components/yrweather';
 //Right container coloumn
 import CryptoPrice from './components/cryptoprice';
-import CryptoPriceXMR from './components/cryptopricexmr';
+
 
 function Dashboard() {
 
@@ -19,7 +19,7 @@ function Dashboard() {
             </div>
             <div className="row d-inline-flex col-12 col-md-7 justify-content-center">
                 <CryptoPrice />
-                <CryptoPriceXMR />
+
             </div>
         </Container>
     ) 
