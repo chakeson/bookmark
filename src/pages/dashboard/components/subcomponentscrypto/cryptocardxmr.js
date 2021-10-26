@@ -1,7 +1,8 @@
 import React from 'react';
 
 
-function CryptoCardXMR({data }) {
+function CryptoCardXMR({ data }) {
+    console.log(data)
     const {id, market_data, marketcap, name, symbol} = data
     
 
