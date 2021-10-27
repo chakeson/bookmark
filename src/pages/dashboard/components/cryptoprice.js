@@ -54,7 +54,7 @@ function CryptoPrice() {
                     </tr>
                 </thead>
                 <tbody>
-                    {succesfulFetchCryptoPrice ? fetchDataCryptoPrice.data.map((data) => (<CryptoCard {...data} key={data.id}/>)) : "Loading"}
+                    {succesfulFetchCryptoPrice ? fetchDataCryptoPrice.data.map((data) => (<CryptoCard {...data} key={data.id}/>)) : <tr><td>Loading</td></tr>}
                 </tbody>
             </Table>
             </div>
