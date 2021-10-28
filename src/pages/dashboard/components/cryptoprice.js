@@ -17,7 +17,7 @@ function CryptoPrice() {
             const url = urlCrypto+dataCall;
             const response = await fetch(url);
             const data = await response.json();
-            console.log(data)
+            //console.log(data)
             setFetchDataCryptoPrice(data)
             setSuccesfulFetchCryptoPrice(true);
         } catch (error) {
