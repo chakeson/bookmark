@@ -1,10 +1,48 @@
 import React from 'react';
 
 
-function CryptoCard({id,metrics,name,slug,symbol}) {
+function CryptoCard({id,metrics,name,symbol}) {
+    
+    //API sometimes doesnt give concistent data.
+    const inputVerification = ()=> {
+        if (!id) {
+            id ="N/A"
+        }
+        if (!metrics.market_data.ohlcv_last_1_hour) {
+            metrics.market_data.ohlcv_last_1_hour = {"low":"N/A","high":"N/A"}
+        }
+        if (!metrics.market_data.ohlcv_last_24_hour) {
+            metrics.market_data.ohlcv_last_24_hour = {"low":"N/A","high":"N/A"}
+        }
+        if (!metrics.market_data.price_usd) {
+            metrics.market_data.price_usd = "N/A"
+        }
+        if (!metrics.market_data.real_volume_last_24_hours) {
+            metrics.market_data.real_volume_last_24_hours = "N/A"
+        }
+        if (!metrics.marketcap) {
+            metrics.marketcap = {"current_marketcap_usd":"N/A","marketcap_dominance_percent":"N/A"}
+        }
+        if (!name) {
+            name ="N/A"
+        }
+        if (!symbol) {
+            symbol ="N/A"
+        }
+    }
+    inputVerification()
     
     const displayBilionsAndTrilions = (number) => {
+        if (typeof number !== "number") {
+            return "N/A"
+        }
         var svar;
+        
+        if (number < 10**7) { //Return if less then 
+            svar = number.toFixed(2);
+            return svar+" usd";
+        }
+        
         number = parseInt(number,10)
         number = number.toFixed(0);
         if (number < 10**9) {
@@ -23,6 +61,10 @@ function CryptoCard({id,metrics,name,slug,symbol}) {
     }
 
     const roundNumberToLength = (number) => {
+        if (typeof number !== "number") {
+            return "N/A"
+        }
+
         var svar;
         if (number < 1) {
             svar = parseFloat(number.toFixed(3));
@@ -51,7 +93,7 @@ function CryptoCard({id,metrics,name,slug,symbol}) {
     return (
         <tr>
             <td>{/*icon*/}
-                <img title={symbol} src={`https://messari.io/asset-images/${id}/32.png?v=2`} alt="crypto coin icon" style={{width:"1.8em"}}/>
+                <img title={symbol} src={`https://messari.io/asset-images/${id}/32.png?v=2`} alt="icon" style={{width:"1.8em"}}/>
             </td>
             <td>{/*Name*/}
                 {name}

@@ -5,7 +5,7 @@ import Table from 'react-bootstrap/table';
 //import Card from 'react-bootstrap/card'
 
 const urlCrypto = "https://data.messari.io/api"
-const dataCall = "/v2/assets?limit=10&fields=id,name,slug,symbol,metrics/market_data/price_usd,metrics/market_data/real_volume_last_24_hours,metrics/market_data/ohlcv_last_1_hour,metrics/market_data/ohlcv_last_24_hour,metrics/marketcap/current_marketcap_usd,metrics/marketcap/marketcap_dominance_percent"
+const dataCall = "/v2/assets?limit=10&fields=id,name,symbol,metrics/market_data/price_usd,metrics/market_data/real_volume_last_24_hours,metrics/market_data/ohlcv_last_1_hour,metrics/market_data/ohlcv_last_24_hour,metrics/marketcap/current_marketcap_usd,metrics/marketcap/marketcap_dominance_percent"
 
 function CryptoPrice() {
     const {succesfulFetchCryptoPrice, setSuccesfulFetchCryptoPrice, fetchDataCryptoPrice, setFetchDataCryptoPrice} = useGlobalContext();
@@ -17,7 +17,7 @@ function CryptoPrice() {
             const url = urlCrypto+dataCall;
             const response = await fetch(url);
             const data = await response.json();
-            //console.log(data)
+            console.log(data)
             setFetchDataCryptoPrice(data)
             setSuccesfulFetchCryptoPrice(true);
         } catch (error) {
