@@ -67,8 +67,3 @@ function Bookmarks() {
 export default Bookmarks;
 
 
-
-/*
-    {nodeshow ? (<h4 className="fontWeightOwn">{title}</h4>) : (<h4 className="fontWeightOwnNormal">{title}</h4>) }
-    <h4 style={{fontWeight: nodeshow ? "bold":"normal"}}>{title}</h4>
-*/

@@ -2,6 +2,10 @@ body {
     padding-top: 70px;
 }
 
+.bodyFull {
+    height: calc(100vh - 70px);
+}
+
 .iconOwn {
     height: 1.2rem;
     width: auto;
@@ -60,4 +64,26 @@ ul {
 	left:0;
 	width:100%;
 	height:100%;
+}
+
+.block {
+    background-color: black;
+    height: 6rem;
+    width: 0.25rem;
+    margin: 10px;
+}
+
+
+.centerdiv {
+    height: 10em;
+    position: relative;
+}
+
+.centerdiv div {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 }
