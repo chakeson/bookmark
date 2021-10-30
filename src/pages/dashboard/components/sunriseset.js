@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import { useGlobalContext } from '../../../context';
-
+import Card from 'react-bootstrap/card'
 
 const urlSunData = "https://api.met.no/weatherapi/sunrise/2.0/.json?"
 
@@ -40,10 +40,10 @@ function SunRiseSet() {
 
 
     return (
-        <div className="card" style={{width:"90%"}}>
-            <div>Sunrise: {succesfulFetchSun ? fetchDataSun.sunrise.slice(11,16) : `loading: ${fetchDataSun}` }</div>
-            <div>Sunset: {succesfulFetchSun ? fetchDataSun.sunset.slice(11,16) : `Loading: ${fetchDataSun}`} </div>
-        </div>
+        <Card className="col-6">
+            <div style={{paddingTop:10,paddingLeft:10,paddingRight:10}}>Sunrise: {succesfulFetchSun ? fetchDataSun.sunrise.slice(11,16) : `loading: ${fetchDataSun}` }</div>
+            <div style={{paddingBottom:10,paddingLeft:10,paddingRight:10}}>Sunset: {succesfulFetchSun ? fetchDataSun.sunset.slice(11,16) : `Loading: ${fetchDataSun}`} </div>
+        </Card>
         
     )
 }

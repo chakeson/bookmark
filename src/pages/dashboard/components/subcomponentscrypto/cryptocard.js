@@ -68,6 +68,12 @@ function CryptoCard({id,metrics,name,symbol}) {
         var svar;
         if (number < 1) {
             svar = parseFloat(number.toFixed(3));
+            let stepper = 4;
+            while (svar=== 0){
+                stepper += 1;
+                svar = parseFloat(number.toFixed(stepper));
+            }
+
             return svar;
         }        
         if (number < 100) {

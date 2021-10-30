@@ -17,7 +17,7 @@ function LongTermWeather() {
         <div className="">
             {succesfulFetchWeather ? 
             (showLongWeather &&
-                (fetchDataWeather[0].slice(fetchDataWeather[1],-1).map((data, index)=> <WeatherCard {...data} key={"short"+index} />)))
+                (fetchDataWeather[0].slice(fetchDataWeather[1],-1).map((data, index)=> <WeatherCard {...data} index={index} key={"short"+index} />)))
             : "Loading"}
         </div>
         </>

@@ -49,7 +49,7 @@ function APOD() {
     return (
         <Card style={{width:"95%"}}>
             {showAPOD && (APODData.media_type==="image") &&
-                <><Card.Img variant="top" src={APODData.url}/>
+                <><Card.Img variant="top" src={APODData.url} style={{paddingTop:12}}/>
                 <Card.Body>
                     <Card.Title>{APODData.title}</Card.Title>
                     <Card.Text>{APODData.explanation}</Card.Text>
@@ -58,7 +58,7 @@ function APOD() {
             }
             {showAPOD && (APODData.media_type==="video") &&
                 <>
-                    <div className="yt-embed">
+                    <div className="yt-embed" style={{paddingTop:12}}>
                         <iframe src={APODData.url} title="YouTube video player" frameBorder="0" allow="encrypted-media; picture-in-picture" allowFullScreen>
                         </iframe>
                     </div>

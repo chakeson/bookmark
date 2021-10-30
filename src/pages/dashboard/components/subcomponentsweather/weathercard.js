@@ -3,13 +3,14 @@ import moment from 'moment'
 import WeatherSVGData from "./weatherSVGdata"
 import { BiError } from "react-icons/bi";
 
-function WeatherCard({data,time}) {
+function WeatherCard({data,time,index}) {
     const [showDay, setShowDay] = useState(false);
     const [day, setDay] = useState("");
     const [clock, setClock] = useState("Loading");
     //console.log(data);
     //console.log(time);
-    
+    //console.log(index)
+
     //Display time and if 00:00 display day and time.
     //var dateTimeText = "Loading";
     useEffect(()=>{
@@ -40,14 +41,14 @@ function WeatherCard({data,time}) {
 
     return (
         <div className="d-flex flex-column border-bottom">
-            {showDay && <div style={{textDecoration:"underline"}}>
+            {(showDay || (index===0)) && <div style={{textDecoration:"underline"}}>
                     {day}
                 </div>}
             <div className="d-flex flex-row justify-content-start">
                 <div style={{paddingRight:10}}> {/* Time in day and weekday*/}
                     {clock}
                 </div>
-                <div style={{paddingRight:10}}> {/*Temperature*/}
+                <div style={{paddingRight:10, width:60}}> {/*Temperature*/}
                     {data.instant.details.air_temperature + " c"} 
                 </div>
                 <div style={{paddingRight:10, width:"3em"}}> {/*Weather svg icon*/}

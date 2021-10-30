@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 import { useGlobalContext } from '../../../context';
 import moment from 'moment'
+import Card from 'react-bootstrap/card'
 import ShortTermWeather from './subcomponentsweather/shorttermweather';
 import LongTermWeather from './subcomponentsweather/longtermweather';
 
@@ -68,10 +69,10 @@ function YRWeather() {
 
 
     return (
-        <div className="card" style={{width:"90%"}}>
+        <Card style={{width:"90%"}}>
             <ShortTermWeather />
             <LongTermWeather />
-        </div>
+        </Card>
         
     )
 }
