@@ -8,6 +8,7 @@ import About from './pages/about/about';
 import Error from './pages/error/error';
 //Components import
 import TopNavbarComponent from './components/topnavbarcomponent';
+import Footer from './components/footer';
 //Context component
 //import DashboardProvider from './pages/dashboard/components/contextDashboard'
 //import Wrapper from './pages/dashboard/wrapper';
@@ -34,6 +35,7 @@ function App() {
           <Error />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }

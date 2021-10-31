@@ -11,7 +11,7 @@ import APOD from './components/APOD';
 function Dashboard() {
 
     return (
-        <Container fluid style={{paddingBottom:50}} className="d-flex justify-content-center align-items-start">
+        <Container fluid style={{paddingBottom:50}} className="fullHeight d-flex justify-content-center align-items-start">
             <div className="row d-inline-flex col-12 col-md-5 justify-content-center">
                 <div className="d-inline-flex justify-content-center row" style={{width:"94%"}}>
                     <IpLocation />

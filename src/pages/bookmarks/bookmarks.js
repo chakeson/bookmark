@@ -47,7 +47,7 @@ const Node = ({id,title,url,img,children}) => {
 function Bookmarks() {
 
     return (
-        <Container>
+        <Container className="fullHeight">
             <div className="row">
                 <div className="col-12 col-md-6">
                     {bookmarksDataLeft.map((firstLayerNodes,index) => (

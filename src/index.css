@@ -1,5 +1,50 @@
+:root {
+    --background-color: #ffffff;
+    --background-color-light:#fafafa;
+    --font-color: #212529;
+    --color-one: #374564;
+    --color-two: #5f3a4c;
+  }
+  
+.darkTheme {
+    --background-color: #191a1a;
+    --background-color-light: #212529;
+    --font-color: #cecdcc;
+    --color-one: #15414b;
+    --color-two: #363a57;
+}
+.lightTheme {
+    --background-color: #ffffff;
+    --background-color-light:#fafafa;
+    --font-color: #212529;
+    --color-one: #374564;
+    --color-two: #5f3a4c;
+}
+
+
+
 body {
     padding-top: 70px;
+    background-color: var(--background-color) !important;
+    color: var(--font-color) !important;
+}
+
+h4 {
+    color: var(--font-color) !important;
+}
+
+td {
+    background-color: var(--background-color) !important;
+    color: var(--font-color) !important;
+}
+
+.card {
+    background-color: var(--background-color-light) !important;
+    color: var(--font-color) !important;
+}
+
+.table {
+    margin:0px !important; /*Bootstrap 5 version has bottom margin of 1rem, overrides that.*/
 }
 
 .bodyFull {
@@ -94,10 +139,84 @@ ul {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: var(--background-color-light) !important;
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 0.25rem;
     padding-right: 0px !important; 
     padding-left: 0px !important;
+}
+
+.fullHeight {
+    min-height: calc(100vh - 70px);
+    min-height: -moz-calc(100vh - 70px);
+    min-height: -webkit-calc(100vh - 70px);
+}
+
+/* FOOTER darkmode checkbox */
+.lada {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+    -webkit-appearance: none;
+}
+
+
+.check {
+    display: block;
+    position: relative;
+    height: 20px;
+    width: 40px;
+    border-radius: 20px; /*make it pill shaped*/
+    background: #191a1a;
+    overflow: hidden;
+    transition: ease-in 0.5s;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked ~ .check
+{
+    background: #ffffff;
+}
+
+.check::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: #ffffff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+input[type="checkbox"]:checked ~ .check::before
+{
+    transform: translateX(-50px);
+}
+
+.check::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #191a1a;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transform: translateX(50px);
+}
+
+input[type="checkbox"]:checked ~ .check::after
+{
+    transform: translateX(0px);
 }
