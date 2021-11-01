@@ -1,11 +1,12 @@
+/* Start of darkmode CSS*/
 :root {
     --background-color: #ffffff;
-    --background-color-light:#fafafa;
+    --background-color-light:#cdcdcd;
     --font-color: #212529;
     --color-one: #374564;
     --color-two: #5f3a4c;
-  }
-  
+}
+
 .darkTheme {
     --background-color: #191a1a;
     --background-color-light: #212529;
@@ -38,10 +39,16 @@ td {
     color: var(--font-color) !important;
 }
 
+footer {
+    background-color: #1d1e1e;
+}
+
 .card {
     background-color: var(--background-color-light) !important;
     color: var(--font-color) !important;
 }
+
+/* End of darkmode CSS*/
 
 .table {
     margin:0px !important; /*Bootstrap 5 version has bottom margin of 1rem, overrides that.*/
@@ -154,15 +161,6 @@ ul {
 }
 
 /* FOOTER darkmode checkbox */
-.lada {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
 input[type="checkbox"] {
     display: none;
     visibility: hidden;
@@ -220,3 +218,32 @@ input[type="checkbox"]:checked ~ .check::after
 {
     transform: translateX(0px);
 }
+
+/*Firefox scrollbar*/
+@supports (scrollbar-color: var(--background-color-light) var(--background-color)) {
+    * {
+      scrollbar-color: var(--background-color-light) var(--background-color);
+    }
+}
+
+
+
+/* GO TO TOP of page button CSS */
+.btn-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 0px !important;
+}
+
+.btn-to-top button {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px; 
+
+}
+

@@ -35,11 +35,13 @@ function Footer() {
     },[theme])
 
     return (
-    <footer className="container">
-        <div className="row">
-            <div className="lada">
+    <footer className="container-fluid" style={{height:"5rem"}}>
+        <div className="d-inline-flex justify-content-center align-items-center">
+            <div style={{color:"#fff",padding:10}}>
                 {(theme==="lightTheme") && <BsMoon/>}
                 {(theme==="darkTheme") && <BsSun/>}
+            </div>
+            <div>
                 <div style={{width:"1rem",height:"1rem"}}></div>
                 <label>
                     <input type="checkbox" checked={checked} onChange={e=>handleChange(e)}/>
