@@ -3,7 +3,7 @@ import { IconContext } from "react-icons";
 import { AiOutlineArrowUp } from "react-icons/ai";
 
 function GoToTop() {
-    const [isVisible, setIsVisible] = useState(true);
+    const [isVisible, setIsVisible] = useState(false);
 
     const goToTop = () => {
         window.scrollTo({top:0,left:0,behavior:"smooth"})
@@ -29,9 +29,9 @@ function GoToTop() {
 
     return (
         <div className="btn-to-top">
-            {isVisible && <button onClick={goToTop} type="button" className="btn-primary">
+            <button onClick={goToTop} type="button" className={`btn-primary ${isVisible ? "opacity-full":"opacity-empty"}`} >
                 <AiOutlineArrowUp size="2em"/>
-            </button>}
+            </button>
         </div>
     )
 }
