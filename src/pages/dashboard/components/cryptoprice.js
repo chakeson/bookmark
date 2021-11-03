@@ -38,7 +38,7 @@ function CryptoPrice() {
     
 
     return (
-        <div className="smallCard" style={{width:"95%"}}>
+        <div className="smallCard">
             <div className="table-responsive" style={{borderRadius:"0.25rem"}}>
             <Table className="card-table table-bordeless table-striped">
                 <thead className="table-dark">

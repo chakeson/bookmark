@@ -69,7 +69,7 @@ function YRWeather() {
 
 
     return (
-        <Card style={{width:"90%"}}>
+        <Card style={{padding:10}}>
             <ShortTermWeather />
             <LongTermWeather />
         </Card>

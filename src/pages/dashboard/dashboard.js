@@ -11,17 +11,20 @@ import APOD from './components/APOD';
 function Dashboard() {
 
     return (
-        <Container fluid style={{paddingBottom:50}} className="fullHeight d-flex justify-content-center align-items-start">
-            <div className="row d-inline-flex col-12 col-md-5 justify-content-center">
-                <div className="d-inline-flex justify-content-center row" style={{width:"94%"}}>
-                    <IpLocation />
-                    <SunRiseSet />
+        <Container fluid style={{paddingBottom:50, maxWidth:1400}} className="fullHeight gx-5">
+            <div className="row">
+                <div className="col-12 col-md-4 justify-content-center">
+                    <YRWeather />
                 </div>
-                <YRWeather />
-            </div>
-            <div className="row d-inline-flex col-12 col-md-7 justify-content-center">
-                <CryptoPrice />
-                <APOD />
+            
+                <div className="col-12 col-md-8 justify-content-center">
+                    <CryptoPrice />
+                    <div className="d-flex">
+                        <IpLocation />
+                        <SunRiseSet />
+                    </div>
+                    <APOD />
+                </div>
             </div>
         </Container>
     ) 

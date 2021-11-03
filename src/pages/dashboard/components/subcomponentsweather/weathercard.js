@@ -14,7 +14,7 @@ function WeatherCard({data,time,index}) {
     //Display time and if 00:00 display day and time.
     //var dateTimeText = "Loading";
     useEffect(()=>{
-        if (time.slice(11,13) === "00") {
+        if (time.slice(11,13) === "00"  || (index===0)) {
             const dateMoment = moment(time);
             const dayNr = dateMoment.day();
             const day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"][dayNr];          
@@ -24,7 +24,7 @@ function WeatherCard({data,time,index}) {
         } else {
             setClock(time.slice(11,16));
         }
-    },[time])
+    },[time,index])
 
 
     var icon;
@@ -41,7 +41,7 @@ function WeatherCard({data,time,index}) {
 
     return (
         <div className="d-flex flex-column border-bottom">
-            {(showDay || (index===0)) && <div style={{textDecoration:"underline"}}>
+            {(showDay) && <div style={{textDecoration:"underline"}}>
                     {day}
                 </div>}
             <div className="d-flex flex-row justify-content-start">

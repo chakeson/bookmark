@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { IconContext } from "react-icons";
 import { AiOutlineArrowUp } from "react-icons/ai";
 
 function GoToTop() {
