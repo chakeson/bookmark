@@ -6,10 +6,11 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
+import Dropdown from 'react-bootstrap/Dropdown';
 import "bootstrap/dist/css/bootstrap.min.css"
 import { IoBookmarksOutline} from "react-icons/io5" // ,IoBookmarks,IoBookmarksSharp <IoBookmarks /><IoBookmarksSharp />
 //import { IoBookmarksOutline } from "react-icons/io5";
-
+import DropDownNav from './subcomponentnavbar/dropdownnav';
 
 function TopNavbarComponent() {
     const [ searchText, setSearchText] = useState("")
@@ -31,8 +32,13 @@ function TopNavbarComponent() {
                     <Nav.Link as={Link} to="/about">About</Nav.Link>
                 </Nav>
                 <Nav>
-                    <Form>
-                        <FormControl onChange={(e)=>handleSearch(e)} value={searchText} type="text" placeholder="Not done"/>
+                    <Form onSubmit={(e)=>{e.preventDefault();}}>
+                        <FormControl onChange={(e)=>handleSearch(e)} value={searchText} type="text" placeholder="Search"/>
+                        <Dropdown>
+                            <ul class={`dropdown-menu ${searchText==="" ? "":"show"}`}>
+                                <DropDownNav text={searchText}/>
+                            </ul>
+                        </Dropdown>
                     </Form>
                 </Nav>
             </Navbar.Collapse>
