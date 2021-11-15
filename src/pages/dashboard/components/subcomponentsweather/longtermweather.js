@@ -9,17 +9,28 @@ function LongTermWeather() {
 
     return (
         <>
-        <div className="border-bottom" style={{paddingTop:5, paddingBottom:5}}>
-            <button className="btn btn-primary" onClick={()=>setShowLongWeather(!showLongWeather)}>
-                {showLongWeather ? "Hide longterm":"Show longterm"}
+        {!showLongWeather && <div>
+            <div className="d-grid">
+            <button className="btn btn-primary btn-m" onClick={()=>setShowLongWeather(!showLongWeather)}>
+                Show longterm
             </button>
-        </div>
+            </div>
+        </div>}
+
         <div className="">
             {succesfulFetchWeather ? 
             (showLongWeather &&
-                (fetchDataWeather[0].slice(fetchDataWeather[1],-1).map((data, index)=> <WeatherCard {...data} index={index} key={"short"+index} />)))
+                (fetchDataWeather[0].slice(fetchDataWeather[1],-1).map((data, index)=> <WeatherCard {...data} index={index} mode="long" key={"long"+index} />)))
             : "Loading"}
         </div>
+
+        {showLongWeather && <div>
+            <div className="d-grid">
+            <button className="btn btn-primary btn-m" onClick={()=>setShowLongWeather(!showLongWeather)}>
+                Hide longterm
+            </button>
+            </div>
+        </div>}
         </>
     )
 }

@@ -3,13 +3,14 @@ import moment from 'moment'
 import WeatherSVGData from "./weatherSVGdata"
 import { BiError } from "react-icons/bi";
 
-function WeatherCard({data,time,index}) {
+function WeatherCard({data,time,index,mode}) {
     const [showDay, setShowDay] = useState(false);
     const [day, setDay] = useState("");
     const [clock, setClock] = useState("Loading");
     //console.log(data);
     //console.log(time);
     //console.log(index)
+    //console.log(mode)
 
     //Display time and if 00:00 display day and time.
     //var dateTimeText = "Loading";
@@ -40,22 +41,23 @@ function WeatherCard({data,time,index}) {
 
 
     return (
-        <div className="d-flex flex-column border-bottom">
-            {(showDay) && <div style={{textDecoration:"underline"}}>
+        <div className="d-flex flex-column">
+            {!(mode==="long" && index===0 && !(time.slice(11,13) === "00")) &&(showDay) && <div style={{paddingTop:20}}>
                     {day}
+                    <hr />
                 </div>}
-            <div className="d-flex flex-row justify-content-start">
-                <div style={{paddingRight:10}}> {/* Time in day and weekday*/}
+            <div className="d-flex justify-content-evenly">
+                <div style={{width:40,color:"grey",fontSize:14,fontWeight:300, alignSelf:"center"}}> {/* Time in day and weekday*/}
                     {clock}
                 </div>
-                <div style={{paddingRight:10, width:60}}> {/*Temperature*/}
-                    {data.instant.details.air_temperature + " c"} 
+                <div style={{width:60, alignSelf:"center", fontWeight:500}}> {/*Temperature*/}
+                    {data.instant.details.air_temperature} <span style={{color:"grey",fontSize:14,fontWeight:300}}>c</span>
                 </div>
-                <div style={{paddingRight:10, width:"3em"}}> {/*Weather svg icon*/}
+                <div style={{width:"3em"}}> {/*Weather svg icon*/}
                     {icon}
                 </div>
-                <div style={{paddingRight:10}}> {/*Wind speed*/}
-                    {data.instant.details.wind_speed+" m/s"}
+                <div style={{width:60, alignSelf:"center", fontWeight:500}}> {/*Wind speed*/}
+                    {data.instant.details.wind_speed} <span style={{color:"grey",fontSize:14,fontWeight:300}}>m/s</span>
                 </div>
             </div>
         </div>

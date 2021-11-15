@@ -1,16 +1,19 @@
 import React, { useCallback, useState } from 'react';
 import Card from 'react-bootstrap/card'
 import Button from 'react-bootstrap/button'
+import Modal from 'react-bootstrap/modal';
+import Image from 'react-bootstrap/Image'
 
 
 const urlBase = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
-
+//const urlIMGTest = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2021-10-31"
+//const urlVideoTest = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2021-10-26"
 
 function APOD() {
     const [APODData, setAPODData] = useState([]);
     const [loadedData, setLoadedData] = useState(false);
     const [showAPOD, setShowAPOD] = useState(false);
-
+    const [isIMGModal, setIsIMGModal] = useState(false);
 
     const getAPOD = useCallback( async () => {
         try {
@@ -47,25 +50,27 @@ function APOD() {
     }
 
     return (
+        <>
         <Card>
             {showAPOD && (APODData.media_type==="image") &&
-                <><Card.Img variant="top" src={APODData.url} style={{paddingTop:12}}/>
-                <Card.Body>
-                    <Card.Title>{APODData.title}</Card.Title>
-                    <Card.Text>{APODData.explanation}</Card.Text>
-                </Card.Body>
+                <>
+                    <Card.Img variant="top" src={APODData.url} className="img-card" onClick={()=>setIsIMGModal(true)}/>
+                    <Card.Body>
+                        <Card.Title>{APODData.title}</Card.Title>
+                        <Card.Text>{APODData.explanation}</Card.Text>
+                    </Card.Body>
                 </>
             }
             {showAPOD && (APODData.media_type==="video") &&
                 <>
-                    <div className="embed-responsive embed-responsive-16by9" style={{paddingTop:12}}>
-                        <iframe className="embed-responsive-item" src={APODData.url} title="YouTube video player" frameBorder="0" allow="encrypted-media; picture-in-picture" allowFullScreen>
+                    <div className="ratio ratio-16x9">
+                        <iframe src={APODData.url} title="YouTube video player" frameBorder="0" allow="encrypted-media; picture-in-picture" allowFullScreen>
                         </iframe>
                     </div>
-                <Card.Body>
-                    <Card.Title>{APODData.title}</Card.Title>
-                    <Card.Text>{APODData.explanation}</Card.Text>
-                </Card.Body>
+                    <Card.Body>
+                        <Card.Title>{APODData.title}</Card.Title>
+                        <Card.Text>{APODData.explanation}</Card.Text>
+                    </Card.Body>
                 </>
             }
             <div style={{padding:10}} className="d-grid">
@@ -77,8 +82,37 @@ function APOD() {
             </div>
         </Card>
         
+        
+        <Modal size="xl" fullscreen={false} show={isIMGModal} onHide={() => setIsIMGModal(false)}>
+            <Modal.Header closeButton>
+                <Modal.Title>{APODData.title}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <span className="d-flex justify-content-center align-items-center">
+                    <Image src={APODData.url} fluid/>
+                </span>
+            </Modal.Body>
+        </Modal>
+        
+
+        </>
     )
 }
 
 
 export default APOD;
+
+/*
+
+        {isIMGModal && 
+            <div className={`${isIMGModal ? "modal modal-show" : "modal" }`}>
+                <img src={APODData.url} alt="Astronmical image of the day" />
+                <div className="d-grid">
+                    <button className="btn btn-primary btn-m" onClick={()=>setIsIMGModal(false)}>
+                        Close
+                    </button>
+                </div>
+            </div>
+        }
+
+*/

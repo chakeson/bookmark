@@ -8,6 +8,7 @@ import link from "../../data/link.png"
 
 const Node = ({id,title,url,img,children}) => {
     const [nodeshow, setNodeShow] = useState(false);
+    const [hoverOn, setHoverOn] = useState(false);
 
     const handleClick = () => {
         setNodeShow(!nodeshow);
@@ -15,20 +16,31 @@ const Node = ({id,title,url,img,children}) => {
 
 
     return (
-        <div>
-            {url==="" ? (
-                <div className="d-inline-flex flex-row" style={{alignItems:"baseline"}} onClick={()=>handleClick()}>
+        <>
+            {url==="" ? 
+            (
+                <div onMouseEnter={()=>setHoverOn(true)} onMouseLeave={()=>setHoverOn(false)} className="d-inline-flex flex-row" style={{alignItems:"center", marginTop:5}} onClick={()=>handleClick()}>
                     {(img!=="folder") && (children==="") && <img src={img} alt="icon" className="iconOwn" onError={(e)=>{e.target.onerror = null; e.target.src=link}}/>}
-                    {(img==="folder") && (nodeshow?<AiOutlineFolderOpen style={{fontSize:"1.3rem"}} /> : <AiOutlineFolderAdd style={{fontSize:"1.3rem"}} />)}
-                    <h4>{title}</h4>
+                    {(img==="folder") && (nodeshow ? 
+                        <div className={`d-grid align-items-center justify-content-center icon-container ${hoverOn ? "icon-container-hover" : ""}`}>
+                            <AiOutlineFolderOpen style={{fontSize:"1.3rem"}} />
+                        </div> 
+                        : 
+                        <div className={`d-grid align-items-center justify-content-center icon-container ${hoverOn ? "icon-container-hover" : ""}`}>
+                            <AiOutlineFolderAdd style={{fontSize:"1.3rem"}} />
+                        </div>)}
+                    <span>{title}</span>
                 </div>
-                )
+            )
             : 
             (
-                <a href={url} target="_blank" rel="noreferrer noopener" className="d-inline-flex flex-row linkOwn" style={{alignItems:"baseline"}} >
-                    {(children==="") && (img!=="folder") && <img src={img} alt="icon" className="iconOwn" onError={(e)=>{e.target.onerror = null; e.target.src=link}}/>}
-                    {(img==="folder") && (nodeshow?<AiOutlineFolderOpen style={{fontSize:"1.3rem"}} /> : <AiOutlineFolderAdd style={{fontSize:"1.3rem"}} />)}
-                    <h4>{title}</h4>
+                <a  onMouseEnter={()=>setHoverOn(true)} onMouseLeave={()=>setHoverOn(false)} href={url} target="_blank" rel="noreferrer noopener" className="d-inline-flex flex-row linkOwn" style={{alignItems:"center", marginTop:5}} >
+                    {(children==="") && (img!=="folder") && 
+                    <div className={`d-grid icon-container ${hoverOn ? "icon-container-hover" : ""}`}>
+                        <img src={img} alt="icon" className="iconOwn" onError={(e)=>{e.target.onerror = null; e.target.src=link}}/>
+                    </div>}
+                    {/*(img==="folder") && (nodeshow ? <AiOutlineFolderOpen style={{fontSize:"1.3rem"}} /> : <AiOutlineFolderAdd style={{fontSize:"1.3rem"}} />)*/}
+                    <span>{title}</span>
                 </a>
             )
             }
@@ -38,7 +50,7 @@ const Node = ({id,title,url,img,children}) => {
                     <Node {...subnode} key={subnode.id}/>
                 ))}
             </div>
-        </div>
+        </>
     )
 
 }

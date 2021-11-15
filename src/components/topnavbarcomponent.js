@@ -35,7 +35,7 @@ function TopNavbarComponent() {
                     <Form onSubmit={(e)=>{e.preventDefault();}}>
                         <FormControl onChange={(e)=>handleSearch(e)} value={searchText} type="text" placeholder="Search"/>
                         <Dropdown>
-                            <ul class={`dropdown-menu ${searchText==="" ? "":"show"}`}>
+                            <ul className={`dropdown-menu ${searchText==="" ? "":"show"}`}>
                                 <DropDownNav text={searchText}/>
                             </ul>
                         </Dropdown>

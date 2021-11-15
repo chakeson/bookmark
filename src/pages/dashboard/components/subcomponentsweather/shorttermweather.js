@@ -13,7 +13,7 @@ function ShortTermWeather() {
     return (
         <div className="flex flex-col">
             {succesfulFetchWeather ? 
-            fetchDataWeather[0].slice(0,fetchDataWeather[1]).map((data, index)=> <WeatherCard {...data} index={index} key={"short"+index} />)
+            fetchDataWeather[0].slice(0,fetchDataWeather[1]).map((data, index)=> <WeatherCard {...data} index={index} mode="short" key={"short"+index} />)
             :"Loading"}
         </div>
         
