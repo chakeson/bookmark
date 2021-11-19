@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 import { useGlobalContext } from '../../../context';
 import moment from 'moment'
-import Card from 'react-bootstrap/card'
+import Card from 'react-bootstrap/Card'
 import ShortTermWeather from './subcomponentsweather/shorttermweather';
 import LongTermWeather from './subcomponentsweather/longtermweather';
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import bookmarksDataLeft from "../../data/dataleft"
 import bookmarksDataRight from "../../data/dataright"
-import { Container } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 import { AiOutlineFolderAdd , AiOutlineFolderOpen} from "react-icons/ai";
 import link from "../../data/link.png"
 

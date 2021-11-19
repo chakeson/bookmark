@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 import { useGlobalContext } from '../../../context';
 import CryptoCard from './subcomponentscrypto/cryptocard';
-import Table from 'react-bootstrap/table';
+import Table from 'react-bootstrap/Table';
 //import Card from 'react-bootstrap/card'
 
 const urlCrypto = "https://data.messari.io/api"

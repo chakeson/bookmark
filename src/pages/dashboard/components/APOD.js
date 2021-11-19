@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
-import Card from 'react-bootstrap/card'
-import Button from 'react-bootstrap/button'
-import Modal from 'react-bootstrap/modal';
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal';
 import Image from 'react-bootstrap/Image'
 
 
