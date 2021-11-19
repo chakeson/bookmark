@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import { useGlobalContext } from '../../../context';
-import Card from 'react-bootstrap/card'
+import Card from 'react-bootstrap/Card'
 
 const urlSunData = "https://api.met.no/weatherapi/sunrise/2.0/.json?"
 
