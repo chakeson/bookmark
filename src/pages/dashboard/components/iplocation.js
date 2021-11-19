@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import { useGlobalContext } from '../../../context';
-import Card from 'react-bootstrap/card'
+import Card from 'react-bootstrap/Card'
 
 const urlLocation = "https://geolocation-db.com/json/"
 
