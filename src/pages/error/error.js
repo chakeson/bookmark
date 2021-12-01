@@ -10,7 +10,7 @@ function Error() {
 
                         <div>404</div>
                         <div className="block"></div>
-                        <div>Head <Link to="/" style={{color:"black"}}>home</Link></div>
+                        <div>Head <Link to="/" style={{color:"var(--font-color)"}}>home</Link></div>
 
                 </div>
             </div>

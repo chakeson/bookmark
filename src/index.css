@@ -127,7 +127,7 @@ ul {
 }
 
 .block {
-    background-color: black;
+    background: var(--font-color);
     height: 6rem;
     width: 0.25rem;
     margin: 10px;
